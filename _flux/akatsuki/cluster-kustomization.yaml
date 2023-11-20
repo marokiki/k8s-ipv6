@@ -8,7 +8,7 @@ spec:
   interval: 10m0s
   retryInterval: 2m0s
   timeout: 3m0s
-  path: ../k8s-ipv6/namespaces
+  path: ./namespaces
   prune: true
   sourceRef:
     kind: GitRepository
@@ -23,7 +23,7 @@ spec:
   interval: 10m0s
   retryInterval: 2m0s
   timeout: 3m0s
-  path: ../k8s-ipv6/repos/helm/metallb
+  path: ./repos/helm/metallb
   prune: true
   sourceRef:
     kind: GitRepository
@@ -38,7 +38,7 @@ spec:
   interval: 10m0s
   retryInterval: 2m0s
   timeout: 3m0s
-  path: ../k8s-ipv6/apps/metallb-ip
+  path: ./apps/metallb-ip
   prune: true
   sourceRef:
     kind: GitRepository
@@ -53,7 +53,7 @@ spec:
   interval: 10m0s
   retryInterval: 2m0s
   timeout: 3m0s
-  path: ../k8s-ipv6/repos/helm/ingress-nginx
+  path: ./repos/helm/ingress-nginx
   prune: true
   sourceRef:
     kind: GitRepository
