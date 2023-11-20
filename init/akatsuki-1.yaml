@@ -1,0 +1,15 @@
+apiVersion: kubeadm.k8s.io/v1beta3
+kind: ClusterConfiguration
+clusterName: akatsuki
+networking:
+  podSubnet: 10.245.0.0/16,2001:db8:43:0::/56
+  serviceSubnet: 10.97.0.0/16,2001:db8:43:1::/112
+---
+apiVersion: kubeadm.k8s.io/v1beta3
+kind: InitConfiguration
+localAPIEndpoint:
+  advertiseAddress: 192.168.20.121
+  bindPort: 6443
+nodeRegistration:
+  kubeletExtraArgs:
+    node-ip: 192.168.20.121,240b:250:9800:4a20::121
