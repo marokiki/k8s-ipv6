@@ -1,0 +1,27 @@
+apiVersion: source.toolkit.fluxcd.io/v1beta1
+kind: HelmRepository
+metadata:
+  name: metallb
+  namespace: metallb-system
+spec:
+  interval: 10m0s
+  url: https://metallb.github.io/metallb
+  timeout: 3m0s
+---
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: metallb
+  namespace: metallb-system
+spec:
+  interval: 1m0s
+  chart:
+    spec:
+      chart: metallb
+      version: 0.13.11
+      sourceRef:
+        kind: HelmRepository
+        name: metallb
+  valuesFrom:
+  - kind: ConfigMap
+    name: values

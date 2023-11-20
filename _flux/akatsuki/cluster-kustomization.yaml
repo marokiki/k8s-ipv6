@@ -13,3 +13,48 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: metallb
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  retryInterval: 2m0s
+  timeout: 3m0s
+  path: ./kubernetes/repos/helm/metallb
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: metallb-ip
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  retryInterval: 2m0s
+  timeout: 3m0s
+  path: ./kubernetes/apps/metallb-ip
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system
+---
+apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+kind: Kustomization
+metadata:
+  name: ingress-nginx
+  namespace: flux-system
+spec:
+  interval: 10m0s
+  retryInterval: 2m0s
+  timeout: 3m0s
+  path: ./kubernetes/repos/helm/ingress-nginx
+  prune: true
+  sourceRef:
+    kind: GitRepository
+    name: flux-system

@@ -1,0 +1,17 @@
+controller:
+  watchIngressWithoutClass: true
+  extraArgs:
+    enable-ssl-passthrough: true
+  service:
+    enableHttp: true
+    enableHttps: true
+    # annotations:
+    #   external-dns.alpha.kubernetes.io/hostname: marokiki.net.
+    loadBalancerIP: 192.168.20.231
+    ports:
+      http: 80
+      https: 443
+    targetPorts:
+      http: http
+      https: https
+    type: LoadBalancer
