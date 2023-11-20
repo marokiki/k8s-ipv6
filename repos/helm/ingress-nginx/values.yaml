@@ -10,7 +10,7 @@ controller:
     loadBalancerIP: 240b:250:9800:4a20:100::1
     ipFamilyPolicy: PreferDualStack
     ipFamilies:
-    - IPv4
+    # - IPv4
     - IPv6
     ports:
       http: 80
