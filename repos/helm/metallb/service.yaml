@@ -1,0 +1,35 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    meta.helm.sh/release-name: metallb
+    meta.helm.sh/release-namespace: metallb-system
+  labels:
+    app.kubernetes.io/instance: metallb
+    app.kubernetes.io/managed-by: Helm
+    app.kubernetes.io/name: metallb
+    helm.toolkit.fluxcd.io/name: metallb
+    helm.toolkit.fluxcd.io/namespace: metallb-system
+  name: metallb-webhook-service
+  namespace: metallb-system
+spec:
+  clusterIP: 10.97.246.239
+  clusterIPs:
+  - 10.97.246.239
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  - IPv6
+  ipFamilyPolicy: PreferDualStack
+  ports:
+  - port: 443
+    protocol: TCP
+    targetPort: 9443
+  selector:
+    app.kubernetes.io/component: controller
+    app.kubernetes.io/instance: metallb
+    app.kubernetes.io/name: metallb
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

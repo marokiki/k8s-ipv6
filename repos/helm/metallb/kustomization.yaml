@@ -9,3 +9,4 @@ configurations:
   - kustomizeconfig.yaml
 resources:
   - helm.yaml
+  - service.yaml
