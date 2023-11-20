@@ -1,0 +1,21 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: sample-ingress
+spec:
+  rules:
+  - host: webapp.marokiki.net
+    http:
+      paths:
+      - path: /app1
+        backend:
+          serviceName: http-service
+          servicePort: 80
+  - host: webapp.marokiki.net
+    http:
+      paths:
+      - path: /app2
+        backend:
+          serviceName: http-service
+          servicePort: 80

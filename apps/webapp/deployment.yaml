@@ -1,0 +1,32 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: sample-http-app
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: sample-http-app
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx:alpine
+        ports:
+        - name: http-port
+          containerPort: 80
+        volumeMounts:
+        - name: documentroot
+          mountPath: /usr/share/nginx/html/
+      - resources:
+        limits:
+          memory: "128Mi"
+          cpu: "500m"
+        requests:
+          memory: "64Mi"
+          cpu: "250m"
+      volumes:
+        - name: documentroot
+          hostPath:
+            path: /home/segre/containers/web/html
