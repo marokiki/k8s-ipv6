@@ -23,7 +23,7 @@ sudo kubeadm join --config=kubeadm-join.yaml
 export GITHUB_TOKEN=github_pat_*****                 
 export GITHUB_USER=segre5458  
 # kubernetes/で実行
-flux bootstrap github --owner=$GITHUB_USER --repository=k8s-ipv6 --branch=master --path=./k8s-ipv6/_flux/akatsuki --personal --components-extra=image-reflector-controller,image-automation-controller --reconcile
+flux bootstrap github --owner=$GITHUB_USER --repository=k8s-ipv6 --branch=master --path=./_flux/akatsuki --personal --components-extra=image-reflector-controller,image-automation-controller --reconcile
 wget https://raw.githubusercontent.com/coreos/flannel/master/Documentation/kube-flannel.yml
 kubectl apply -f kube-flannel.yml
 ```
