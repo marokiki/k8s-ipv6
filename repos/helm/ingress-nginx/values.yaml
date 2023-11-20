@@ -8,9 +8,9 @@ controller:
     # annotations:
     #   external-dns.alpha.kubernetes.io/hostname: marokiki.net.
     # loadBalancerIP: "240b:250:9800:4a20:100::1"
-    externalIPs:
-    - 192.168.20.231
-    - 240b:250:9800:4a20:100::1
+    # externalIPs:
+    # - 192.168.20.231
+    # - 240b:250:9800:4a20:100::1
     # loadBalancerIP: 192.168.20.231
     ipFamilyPolicy: PreferDualStack
     # ipFamilyPolicy: SingleStack
