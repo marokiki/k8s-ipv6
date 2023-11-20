@@ -1,21 +1,17 @@
----
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: sample-ingress
+  name: myapp
 spec:
+  ingressClassName: "nginx"
   rules:
-  - host: webapp.marokiki.net
+  - host: myapp.marokiki.net
     http:
       paths:
-      - path: /app1
+      - path: /
+        pathType: Prefix
         backend:
-          serviceName: http-service
-          servicePort: 80
-  - host: webapp.marokiki.net
-    http:
-      paths:
-      - path: /app2
-        backend:
-          serviceName: http-service
-          servicePort: 80
+          service:
+            name: myapp-service
+            port:
+              number: 80

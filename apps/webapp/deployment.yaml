@@ -1,32 +1,26 @@
----
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: sample-http-app
+  name: myapp
+  labels:
+    app: myapp
 spec:
-  replicas: 2
+  replicas: 3
+  selector:
+    matchLabels:
+      app: myapp
   template:
     metadata:
       labels:
-        app: sample-http-app
+        app: myapp
     spec:
       containers:
-      - name: nginx-container
-        image: nginx:alpine
+      - name: web-container
+        image: nginx
         ports:
-        - name: http-port
-          containerPort: 80
-        volumeMounts:
-        - name: documentroot
-          mountPath: /usr/share/nginx/html/
-      - resources:
-        limits:
-          memory: "128Mi"
-          cpu: "500m"
-        requests:
-          memory: "64Mi"
-          cpu: "250m"
-      volumes:
-        - name: documentroot
-          hostPath:
-            path: /home/segre/containers/web/html
+          - containerPort: 80
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+          
