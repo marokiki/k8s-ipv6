@@ -13,14 +13,14 @@ metadata:
   name: metallb-webhook-service
   namespace: metallb-system
 spec:
-  clusterIP: 10.97.246.239
-  clusterIPs:
-  - 10.97.246.239
+  # clusterIP: 10.97.246.239
+  # clusterIPs:
+  # - 10.97.246.239
   internalTrafficPolicy: Cluster
   ipFamilies:
   - IPv4
   - IPv6
-  ipFamilyPolicy: RequireDualStack
+  ipFamilyPolicy: PreferDualStack
   ports:
   - port: 443
     protocol: TCP
