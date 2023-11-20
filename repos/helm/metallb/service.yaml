@@ -20,7 +20,7 @@ spec:
   ipFamilies:
   - IPv4
   - IPv6
-  ipFamilyPolicy: PreferDualStack
+  ipFamilyPolicy: RequireDualStack
   ports:
   - port: 443
     protocol: TCP
