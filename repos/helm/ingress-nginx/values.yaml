@@ -7,7 +7,11 @@ controller:
     enableHttps: true
     # annotations:
     #   external-dns.alpha.kubernetes.io/hostname: marokiki.net.
-    loadBalancerIP: 192.168.20.231
+    loadBalancerIP: 192.168.20.231,240b:250:9800:4a20:100::1
+    ipFamilyPolicy: PreferDualStack
+    ipFamilies:
+    - IPv4
+    - IPv6
     ports:
       http: 80
       https: 443
