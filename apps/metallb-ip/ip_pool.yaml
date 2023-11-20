@@ -3,7 +3,7 @@ apiVersion: metallb.io/v1beta1
 kind: IPAddressPool
 metadata:
   name: metallb
-  namespace: flux-system
+  namespace: metallb-system
 spec:
   addresses:
   - 192.168.20.231-192.168.20.235
@@ -14,7 +14,7 @@ apiVersion: metallb.io/v1beta1
 kind: L2Advertisement
 metadata:
   name: metallb
-  namespace: flux-system
+  namespace: metallb-system
 spec:
   ipAddressPools:
   - metallb
