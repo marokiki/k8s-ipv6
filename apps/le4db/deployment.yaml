@@ -19,7 +19,7 @@ spec:
         image: ghcr.io/segre5458/le4db/le4db:latest
         imagePullPolicy: Always
         ports:
-          - containerPort: 80
+          - containerPort: 8080
         resources:
           limits:
             memory: "128Mi"
