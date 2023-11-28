@@ -13,7 +13,6 @@ controller:
     # - 240b:250:9800:4a20:100::1
     # loadBalancerIP: 192.168.20.231
     ipFamilyPolicy: PreferDualStack
-    # ipFamilyPolicy: SingleStack
     ipFamilies:
     - IPv4
     - IPv6
