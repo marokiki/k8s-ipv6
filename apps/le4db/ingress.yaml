@@ -14,4 +14,4 @@ spec:
           service:
             name: le4db-service
             port:
-              number: 8080
+              number: 80
