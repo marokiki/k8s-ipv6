@@ -1,0 +1,17 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: le4db
+spec:
+  ingressClassName: "nginx"
+  rules:
+  - host: le4db.marokiki.net
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: le4db-service
+            port:
+              number: 80

@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: le4db
+  labels:
+    app: le4db
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: le4db
+  template:
+    metadata:
+      labels:
+        app: le4db
+    spec:
+      containers:
+      - name: le4db
+        image: ghcr.io/segre5458/le4db/le4db:latest
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 80
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+          
