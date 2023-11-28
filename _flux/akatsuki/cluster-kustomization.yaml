@@ -73,18 +73,18 @@ spec:
   sourceRef:
     kind: GitRepository
     name: flux-system
----
-apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
-kind: Kustomization
-metadata:
-  name: le4db
-  namespace: flux-system
-spec:
-  interval: 10m0s
-  retryInterval: 2m0s
-  timeout: 3m0s
-  path: ./apps/le4db
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
+# ---
+# apiVersion: kustomize.toolkit.fluxcd.io/v1beta2
+# kind: Kustomization
+# metadata:
+#   name: le4db
+#   namespace: flux-system
+# spec:
+#   interval: 10m0s
+#   retryInterval: 2m0s
+#   timeout: 3m0s
+#   path: ./apps/le4db
+#   prune: true
+#   sourceRef:
+#     kind: GitRepository
+#     name: flux-system
