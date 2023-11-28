@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: le4db
-        image: ghcr.io/segre5458/le4db/le4db:latest
+        image: ghcr.io/segre5458/le4db/app:latest
         imagePullPolicy: Always
         ports:
           - containerPort: 8080
