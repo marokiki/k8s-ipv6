@@ -12,3 +12,18 @@ spec:
   selector:
     app: le4db
   type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: le4db-postgres-service
+  labels:
+    app: le4db-postgres-service
+spec:
+  ports:
+  - port: 5432
+    protocol: TCP
+    targetPort: 5432
+  selector:
+    app: le4db-postgres
+  type: ClusterIP

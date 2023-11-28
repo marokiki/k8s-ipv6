@@ -24,4 +24,37 @@ spec:
           limits: 
             cpu: 100m
             memory: 128Mi
-          
+---
+apiVersion: v1
+kind: Deployment
+metadata:
+  name: le4db-postgres
+  labels:
+    app: le4db-postgres
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: le4db-postgres
+  template:
+    metadata:
+      labels:
+        app: le4db-postgres
+    spec:
+      containers:
+      - name: le4db-postgres
+        image: ghcr.io/segre5458/le4db/postgres:latest
+        imagePullPolicy: Always
+        ports:
+          - containerPort: 5432
+        env:
+          - name: POSTGRES_USER
+            value: postgres
+          - name: POSTGRES_PASSWORD
+            value: postgres
+          - name: POSTGRES_DB
+            value: postgres
+        resources:
+          limits: 
+            cpu: 100m
+            memory: 128Mi
